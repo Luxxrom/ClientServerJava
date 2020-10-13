@@ -2,10 +2,11 @@ import java.net.*;
 import java.io.*;
 
 public class Server {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         int count = 0;
         ServerSocket serverSocket = new ServerSocket(8000);
+        System.out.println("Server started");
 
         while (true) {
 
@@ -28,7 +29,7 @@ public class Server {
 //            writer.write("GET HTTP/1.1 200 OK\n\n" +
 //                    "Content-type: text/html\n" +
 //                    "<h2>Hello JAVA " + count + "</h2>\n");
-
+            Thread.sleep(3000);
             writer.write(response);
             writer.flush();
 
